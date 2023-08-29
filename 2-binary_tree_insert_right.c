@@ -17,16 +17,13 @@ return (NULL);
 node->n = value;
 node->parent = parent;
 node->left = NULL;
-if (parent->right == NULL)
-{
 node->right = NULL;
-parent->right = node;
-}
-else
+if (parent->right != NULL)
 {
 node->right = parent->right;
 parent->right->parent = node;
 parent->right = node;
 }
+parent->right = node;
 return (node);
 }

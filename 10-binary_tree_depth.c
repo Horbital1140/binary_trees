@@ -8,16 +8,14 @@
 size_t binary_tree_depth(const binary_tree_t *tree)
 {
 size_t flag = 0;
-const binary_tree_t *temp = malloc(sizeof(binary_tree_t));
 if (tree == NULL)
 {
 return (flag);
 }
-temp = tree;
-while (temp->parent)
+while (tree->parent)
 {
 flag++;
-temp = temp->parent;
+tree = tree->parent;
 }
 return (flag);
 }

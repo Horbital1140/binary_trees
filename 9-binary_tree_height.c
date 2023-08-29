@@ -17,10 +17,10 @@ left_node = binary_tree_height(tree->left);
 right_node = binary_tree_height(tree->right);
 if (left_node > right_node)
 {
-return (left_node + 1);
+return (left_node);
 }
 else
 {
-return (right_node + 1);
+return (right_node);
 }
 }

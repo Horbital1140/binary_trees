@@ -8,17 +8,33 @@
 
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-size_t flag = 0;
-const binary_tree_t *temp = malloc(sizeof(binary_tree_t));
+size_t left_node, right_node;
 if (tree == NULL)
 {
-return (flag);
+return (0);
 }
-temp = tree;
-while (temp->right || temp->left)
+if (tree->left)
 {
-flag++;
-temp = temp->left ? temp->left : temp->right;
+left_node = 1 + binary_tree_height(tree->left);
 }
-return (flag);
+else
+{
+left_node = 0;
+}
+if (tree->right)
+{
+right_node = 1 + binary_tree_height(tree->right);
+}
+else
+{
+right_node = 0;
+}
+if (left_node > right_node)
+{
+return (left_node);
+}
+else
+{
+return (right_node);
+}
 }

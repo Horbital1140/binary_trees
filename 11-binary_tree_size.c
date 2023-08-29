@@ -2,7 +2,7 @@
 /**
 * binary_tree_size - function to get size of a binary tree
 * @tree: the tree
-* Return: depth of the tree
+* Return: size of the tree
 */
 
 size_t binary_tree_size(const binary_tree_t *tree)
